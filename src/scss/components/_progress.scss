@@ -96,7 +96,7 @@
   border-bottom: 1px solid var(--border-color);
 
   & > span {
-    width: 48px;
+    min-width: 48px;
     height: 48px;
     background-color: var(--accent-color);
     border-radius: 50%;
@@ -180,8 +180,10 @@ input {
 
   &__inputs {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     column-gap: 1em;
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   & .radio {
@@ -232,9 +234,10 @@ input {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5em;
+  padding: 1.5em 0;
   margin-bottom: 2em;
   color: var(--text-color);
+  flex-wrap: wrap;
 
   &__question {
     display: flex;
@@ -252,6 +255,7 @@ input {
   }
 
   &__btn {
+    width: 100%;
     padding: 0.875em 2em;
     font-size: 1em;
     color: var(--light-color);
@@ -261,6 +265,13 @@ input {
     transition: all 0.3s ease-in-out;
     font-weight: 500;
     letter-spacing: 1px;
+    text-align: center;s
+    margin-top: 2.5em;
+
+    @media (min-width: 768px) {
+      width: auto;
+      margin-top: 0;
+    }
 
     &:hover {
       text-decoration: none;
