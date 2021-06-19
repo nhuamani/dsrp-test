@@ -1,0 +1,270 @@
+.progress-container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-color);
+  filter: brightness(0.9);
+  padding: 0 1em;
+}
+
+.progress {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+
+  &-dot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-color);
+    position: relative;
+    flex: 1 0;
+
+    &__circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 3px solid var(--border-color);
+      position: relative;
+    }
+    // Si tiene la clase completa la tarea
+    &.is-active {
+      .progress-dot__circle {
+        border-color: var(--accent-color);
+      }
+    }
+
+    // Icono de Check
+    &.is-active.is-complete {
+      .progress-dot__circle {
+        background-color: var(--accent-color);
+        &:before {
+          content: "✓";
+          color: var(--bg-color);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -53%);
+        }
+      }
+    }
+
+    &__name {
+      margin: 1em 0;
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    // Colorea lineas con gris
+    &:before {
+      content: "";
+      width: 75%;
+      height: 2px;
+      background-color: var(--border-color);
+      position: absolute;
+      z-index: 100;
+      right: 100%;
+      top: 50%;
+      transform: translate(50%, -50%);
+
+      @media (min-width: 768px) {
+        top: 10px;
+      }
+    }
+
+    // colorea las lineas con color del thema
+    &.is-active:before {
+      background-color: var(--accent-color);
+    }
+
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+
+.step-icon {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding: 1.5em 0;
+  border-bottom: 1px solid var(--border-color);
+
+  & > span {
+    width: 48px;
+    height: 48px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1.5em;
+
+    & i.fa-user {
+      font-size: 1.5em;
+    }
+  }
+
+  & .step-head {
+    &__title {
+      color: var(--text-color);
+      font-size: 1.5em;
+      margin-bottom: 0;
+    }
+
+    &__subtitle {
+      font-size: 0.875em;
+      line-height: 2.5;
+      margin: 0;
+      opacity: 0.8;
+      color: var(--text-color);
+
+      & span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  margin: 1rem 0;
+  background-color: var(--bg-color);
+  font-size: 1em;
+  line-height: 1.5;
+
+  &::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border-radius: 0.5rem;
+    outline: none;
+    border: 1px solid var(--second-color);
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(51, 177, 255, 1);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(51, 177, 255, 1);
+    box-shadow: 0px 0px 5px 2px rgba(51, 177, 255, 1);
+  }
+}
+
+.step-input {
+  .form-control {
+    margin: 1.5em 0 0;
+  }
+
+  &__title {
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0.5em 0;
+  }
+
+  &__info {
+    color: var(--text-color);
+    font-size: 0.875em;
+    line-height: 2.5;
+    margin: 0;
+    opacity: 0.8;
+  }
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1em;
+  }
+
+  & .radio {
+    display: flex;
+  }
+
+  &__radio {
+    width: 92px;
+    height: 48px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1em;
+    border-radius: 0.5em;
+
+    &.step2 {
+      flex: 1 0;
+    }
+
+    & input[type="radio"] {
+      width: 24px;
+      height: 24px;
+      border-color: var(--bg-color);
+      margin-right: 1em;
+      border: none;
+      outline: none;
+
+      &:checked {
+        background: var(--second-color);
+        display: inline-block;
+        padding: 0 0 0 0px;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
+
+.form-control.show {
+  margin: 2em 0;
+  padding: 1.5em 0;
+  background-color: var(--bg-color);
+  filter: brightness(0.9);
+}
+
+.step-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  margin-bottom: 2em;
+  color: var(--text-color);
+
+  &__question {
+    display: flex;
+    align-items: center;
+
+    & p {
+      opacity: 0.8;
+      margin-right: 1em;
+    }
+
+    & a {
+      color: var(--second-color);
+      transition: all 0.8s ease-in-out;
+    }
+  }
+
+  &__btn {
+    padding: 0.875em 2em;
+    font-size: 1em;
+    color: var(--light-color);
+    background-color: var(--accent-color);
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    &:hover {
+      text-decoration: none;
+      filter: brightness(0.9);
+    }
+  }
+}

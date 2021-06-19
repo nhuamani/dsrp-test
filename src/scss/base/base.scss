@@ -1,0 +1,25 @@
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  position: relative;
+  background-color: var(--bg-color);
+  color: var(--light-color);
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

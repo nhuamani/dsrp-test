@@ -1,0 +1,69 @@
+extends ../config/template
+append config
+  -pageTitle = 'Step 1'
+  -pageDescription = 'Pagina de paso 1'
+  -pageImage = ''
+
+block main
+  // include ../includes/main-menu
+
+  .progress-container
+    .progress
+      .progress-dot.is-active
+          .progress-dot__circle
+          .progress-dot__name Nombre y Correo
+      .progress-dot
+          .progress-dot__circle
+          .progress-dot__name Intereses
+      .progress-dot
+          .progress-dot__circle
+          .progress-dot__name Compromiso
+      .progress-dot
+          .progress-dot__circle
+          .progress-dot__name Entrar
+
+  .container
+    .step-icon
+      span
+        i.far.fa-user
+      div.step-head
+        h1.step-head__title Estás a unos pasos de adquirir conocimiento para toda la vida
+        p.step-head__subtitle Completa tus datos para crear 
+          span tu 
+          |cuenta.
+
+    form(action="").step-input
+      .form-control
+        label.step-input__title(for="name") Nombre Completo
+        p.step-input__info Así aparecerá en tus certificados
+        .step-input__inputs
+          input(type="text" id="name" placeholder="Nombres(s)" required)
+          input(type="text" id="last-name" placeholder="Apellido(s)" required)
+
+      .form-control
+        label.step-input__title(for="email") Correo electrónico
+        div.step-input__info Te enviaremos un email de confirmación para activar tu cuenta si no lo has hecho antes.
+          input(type="mail" id="email" placeholder="tunombre@correo.com" required)
+
+      .form-control
+        p.step-input__title ¿Tienes WhatsApp?
+        .radio
+          .step-input__radio
+            input#si(type="radio" name="whatsapp" value="si" )
+            span Si
+          .step-input__radio
+            input#no(type="radio" name="whatsapp" value="no" checked)
+            span No
+  .form-control.show
+    .container
+      p.step-input__title Ingresa un número de celular válido para contacto
+      input(type="tel", name="cel" placeholder="N°. Cel")
+
+  .container
+    .step-footer
+      .step-footer__question
+        p ¿Ya tienes una cuenta Platzi?
+        a(href="#") Entrar aquí
+
+      a.step-footer__btn(href="step2.html") Continuar
+

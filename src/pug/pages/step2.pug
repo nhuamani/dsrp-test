@@ -1,0 +1,82 @@
+extends ../config/template
+append config
+  -pageTitle = 'Step 2'
+  -pageDescription = 'Pagina paso 2'
+  -pageImage = ''
+
+block main
+  // include ../includes/main-menu
+
+  .progress-container
+    .progress
+      .progress-dot.is-active.is-complete
+          .progress-dot__circle
+          .progress-dot__name Nombre y Correo
+      .progress-dot.is-active.is-complete
+          .progress-dot__circle
+          .progress-dot__name Intereses
+      .progress-dot.is-active
+          .progress-dot__circle
+          .progress-dot__name Compromiso
+      .progress-dot
+          .progress-dot__circle
+          .progress-dot__name Entrar
+
+  .container
+    .step-icon
+      span
+        i.far.fa-handshake
+      div.step-head
+        h1.step-head__title Compromiso
+        p.step-head__subtitle Garantiza tu crecimiento profesional
+
+    form(action="").step-input
+      .form-control
+        label.step-input__title(for="name") ¿Cuántas horas al día te comprometes a estudiar?
+        .radio
+          .step-input__radio.step2
+            input#one(type="radio" name="horas" value="1" )
+            span 1 hora
+          .step-input__radio.step2
+            input#two(type="radio" name="horas" value="2" checked)
+            span 2 horas
+
+          .step-input__radio.step2
+            input#tree(type="radio" name="horas" value="3" checked)
+            span 3 horas
+
+          .step-input__radio.step2
+            input#four(type="radio" name="horas" value="2" checked)
+            span 4 horas
+
+          .step-input__radio.step2
+            input#five(type="radio" name="horas" value="5" checked)
+            span 5 o más
+
+      .form-control
+        label.step-input__title(for="email") Un estudiante realmente comprometido:
+          ul 
+            li Estudia al menos una clase al día
+            li Practica y aplica lo aprendido
+            li Se apoya de la comunidad para reforzar su aprendizaje
+            
+
+
+      .form-contro
+        h1.step-input__title Compromiso
+        p.step-input__info Garantiza tu crecimiento profesional
+        label
+          input(type="checkbox" id="cbox1" value="first_checkbox")
+          | Avanzaré en mi aprendizaje todos los días
+        label 
+          input(type="checkbox" id="cbox2" value="second_checkbox")
+          | Siempre leeré los aportes de la comunidad
+        label 
+          input(type="checkbox" id="cbox2" value="second_checkbox")
+          | Presentaré y aprobaré los exámenes sin miedo
+
+  .container
+    .step-footer.justify-content-end
+      a.step-footer__btn(href="step2.html") Continuar
+
+

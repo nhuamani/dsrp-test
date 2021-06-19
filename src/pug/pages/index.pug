@@ -1,0 +1,44 @@
+extends ../config/template
+append config
+  -pageTitle = 'Home'
+  -pageDescription = `Pagina inicial de ${nameCompany}`
+  -pageImage = ''
+
+block main
+  // include ../includes/main-menu
+
+  .container
+    .row.hero
+      .col-12.col-md-10.col-lg-6.d-flex.flex-column.justify-content-center
+        h1.hero-title Curso de Introducción a C
+        .hero-ranking
+          span
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          span.hero-ranking__comments
+            a(href="#") 935 Opiniones
+          span.hero-ranking__level <i class="far fa-chart-bar"></i> Básico
+
+        p.hero-description ¡Comienza a aprnde C! Domina los conceptos básicos del lenguaje de progrmación de propósito denneral usado para progrmar microcontroladores y sistemas operativos.
+
+        .hero-invite
+          p Registrate para tomar este curso
+          div
+            input#mail(type="email", name="" placeholder="Ingresa tu email")
+            a.hero-invite__btn(href="step1.html") Empieza sin costo
+
+        p.hero-terms Al ingresar aceptas 
+          a(href="#") Términos de Servicio 
+          | y 
+          a(href="") Politicas de Privacidad  
+
+      .col-md-2.col-lg-6.position
+        img.hero-image(src="assets/img/Ricardo-Celis.webp", alt="")
+
+        span.hero-teacher
+          a(href="#") 
+            p.hero-teacher__name Ricardo Celis <i class="fas fa-external-link-alt"></i>
+            p.hero-teacher__rol Course Director en Platzi
