@@ -49,12 +49,12 @@ block main
         p.step-input__title ¿Tienes WhatsApp?
         .radio
           .step-input__radio
-            input#si(type="radio" name="whatsapp" value="si" )
+            input#si(type="radio" name="whatsapp" value="si")
             span Si
           .step-input__radio
-            input#no(type="radio" name="whatsapp" value="no" checked)
+            input#no(type="radio" name="whatsapp" value="no")
             span No
-  .form-control.show
+  .form-control.shows#contact
     .container
       p.step-input__title Ingresa un número de celular válido para contacto
       input(type="tel", name="cel" placeholder="N°. Cel")
@@ -62,7 +62,7 @@ block main
   .container
     .step-footer
       .step-footer__question
-        p ¿Ya tienes una cuenta Platzi?
+        p ¿Ya tienes una cuenta DSRP?
         a(href="#") Entrar aquí
 
       a.step-footer__btn(href="step2.html") Continuar

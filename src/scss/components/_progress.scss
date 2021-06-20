@@ -188,6 +188,7 @@ input {
 
   & .radio {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__radio {
@@ -228,6 +229,7 @@ input {
   padding: 1.5em 0;
   background-color: var(--bg-color);
   filter: brightness(0.9);
+  display: none;
 }
 
 .step-footer {
@@ -265,7 +267,7 @@ input {
     transition: all 0.3s ease-in-out;
     font-weight: 500;
     letter-spacing: 1px;
-    text-align: center;s
+    text-align: center;
     margin-top: 2.5em;
 
     @media (min-width: 768px) {
